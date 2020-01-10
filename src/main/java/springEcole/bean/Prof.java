@@ -1,16 +1,18 @@
 package springEcole.bean;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -41,6 +43,12 @@ public class Prof {
 	
 	@Enumerated(EnumType.STRING)
 	private Sexe sexe;
+	
+	@OneToMany(mappedBy="classe", fetch=FetchType.LAZY)
+	private List<Classe> classes = new ArrayList<Classe>();
+	
+	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {
 		return id;
@@ -88,6 +96,22 @@ public class Prof {
 
 	public void setSexe(Sexe sexe) {
 		this.sexe = sexe;
+	}
+
+	public List<Classe> getClasses() {
+		return classes;
+	}
+
+	public void setClasses(List<Classe> classes) {
+		this.classes = classes;
+	}
+
+	public List<Note> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
 	}
 	
 	

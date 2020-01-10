@@ -1,12 +1,17 @@
 package springEcole.bean;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +29,12 @@ public class Classe {
 	@ManyToOne
 	@JoinColumn( name="prof", nullable=false )
 	private Prof prof;
+	
+	@OneToMany(mappedBy="eleve", fetch=FetchType.LAZY)
+	private List<Eleve> eleves = new ArrayList<Eleve>();
+	
+	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {
 		return id;
@@ -47,6 +58,22 @@ public class Classe {
 
 	public void setProf(Prof prof) {
 		this.prof = prof;
+	}
+
+	public List<Eleve> getEleves() {
+		return eleves;
+	}
+
+	public void setEleves(List<Eleve> eleves) {
+		this.eleves = eleves;
+	}
+
+	public List<Note> getNotes() {
+		return notes;
+	}
+
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
 	}
 
 }
