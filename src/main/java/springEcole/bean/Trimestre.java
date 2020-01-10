@@ -16,7 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table( name="t_classe" )
+@Table( name="t_trimestre" )
 
 public class Trimestre {
 	
@@ -32,7 +32,7 @@ public class Trimestre {
 	@Column( name="date" )
 	private Date date;
 	
-	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="trimestre", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {

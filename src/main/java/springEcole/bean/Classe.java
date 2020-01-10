@@ -30,10 +30,10 @@ public class Classe {
 	@JoinColumn( name="prof", nullable=false )
 	private Prof prof;
 	
-	@OneToMany(mappedBy="eleve", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="classe", fetch=FetchType.LAZY)
 	private List<Eleve> eleves = new ArrayList<Eleve>();
 	
-	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="classe", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {

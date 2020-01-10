@@ -18,11 +18,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table( name="t_classe" )
+@Table( name="t_prof" )
 
 public class Prof {
 
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="IDOBJET")
@@ -44,10 +43,10 @@ public class Prof {
 	@Enumerated(EnumType.STRING)
 	private Sexe sexe;
 	
-	@OneToMany(mappedBy="classe", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="prof", fetch=FetchType.LAZY)
 	private List<Classe> classes = new ArrayList<Classe>();
 	
-	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="prof", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {

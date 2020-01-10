@@ -20,7 +20,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table( name="t_classe" )
+@Table( name="t_eleve" )
 
 public class Eleve {
 	
@@ -49,7 +49,7 @@ public class Eleve {
 	@Enumerated(EnumType.STRING)
 	private Sexe sexe;
 
-	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="eleve", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {

@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table( name="t_classe" )
+@Table( name="t_matiere" )
 
 public class Matiere {
 	
@@ -25,7 +25,7 @@ public class Matiere {
 	@Column(name="nom", nullable=true, length=250)
 	private String nom;
 	
-	@OneToMany(mappedBy="note", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="matiere", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
 	public Integer getId() {
