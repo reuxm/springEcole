@@ -22,7 +22,7 @@ public class Trimestre {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="IDOBJET")
+	@Column(name="id")
 	private Integer id;
 	
 	@Column(name="nom", nullable=false, length=100)

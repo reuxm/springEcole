@@ -10,7 +10,6 @@ import javax.persistence.criteria.CriteriaQuery;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
 public abstract class Dao<T> {
 	
 	@PersistenceContext

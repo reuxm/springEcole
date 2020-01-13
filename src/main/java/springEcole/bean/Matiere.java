@@ -19,7 +19,7 @@ public class Matiere {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="IDOBJET")
+	@Column(name="id")
 	private Integer id;
 	
 	@Column(name="nom", nullable=true, length=250)

@@ -6,8 +6,11 @@ import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 
+import org.springframework.stereotype.Repository;
+
 import springEcole.bean.Eleve;
 
+@Repository
 public class EleveDao extends Dao<Eleve> implements IEleveDAO {
 
 	protected EleveDao() {

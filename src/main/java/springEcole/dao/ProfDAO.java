@@ -6,8 +6,11 @@ import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 
+import org.springframework.stereotype.Repository;
+
 import springEcole.bean.Prof;
 
+@Repository
 public class ProfDAO extends Dao<Prof> implements IProfDAO {
 
 	protected ProfDAO() {

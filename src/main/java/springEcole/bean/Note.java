@@ -20,7 +20,7 @@ public class Note {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="IDOBJET")
+	@Column(name="id")
 	private Integer id;
 	
 	@Temporal(TemporalType.DATE)

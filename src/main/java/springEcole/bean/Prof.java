@@ -24,7 +24,7 @@ public class Prof {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="IDOBJET")
+	@Column(name="id")
 	private Integer id;
 	
 	@Column(name="nom", nullable=false, length=100)
@@ -34,7 +34,7 @@ public class Prof {
 	private String prenom;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column( name="date_naissance;" )
+	@Column( name="date_naissance" )
 	private Date dateNaissance;
 	
 	@Column(name="adresse", nullable=true, length=250)
