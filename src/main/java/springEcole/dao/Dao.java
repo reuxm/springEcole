@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaUpdate;
 
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +36,10 @@ public abstract class Dao<T> {
 		entityManager.persist( t );
 	}
 
+	public T get( final Integer i ) {
+		return entityManager.find(dataType, i);
+	}
+	
 	protected void remove(T t) {
 		entityManager.remove( t );
 	}

@@ -10,5 +10,6 @@ public interface IClasseDAO {
 	void create( final Classe c );
 	void update( final Classe c );
 	void remove( final Classe c );
+	Classe get( final Integer id );
 
 }

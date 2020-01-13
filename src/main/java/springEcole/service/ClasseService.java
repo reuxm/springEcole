@@ -42,5 +42,11 @@ public class ClasseService implements IClasseService {
 		classe.setId(id);
 		dao.remove( classe );
 	}
+
+	@Override
+	@Transactional
+	public Classe get(Integer id) {
+		return dao.get( id );
+	}
 	
 }

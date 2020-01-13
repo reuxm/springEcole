@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import springEcole.bean.Classe;
 import springEcole.service.IClasseService;
@@ -25,4 +26,9 @@ public class ClasseController {
 		return "listClasses";		
 	}
 	
+	@RequestMapping( method=RequestMethod.POST )
+	public String suppr( @RequestParam(value="id") final Integer id, ModelMap pModel ) {
+		service.remove( id );
+		return display( pModel );
+	}
 }

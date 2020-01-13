@@ -9,24 +9,33 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table border="1">
+	<table>
 		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Nom</th>
 				<th>Prof</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach items="${liste}" var="c">
 				<tr>
-					<td><c:out value="${c.id}" /></td>
+					<td><a href="./editClasse/${ c.id }"><c:out value="${c.id}" /></a></td>
 					<td><c:out value="${c.nom}" /></td>
 					<td><c:out value="${c.prof.nom}" /></td>
+					<td>
+						<form action="./classes" method="post">
+							<input hidden="true" name="id" value="${c.id}" />
+							<button type="submit">Supprimer</button>
+						</form>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
+	<form action="editClasse" method="post">
+		<button type="submit">New</button>
+	</form>
 </body>
 </html>
