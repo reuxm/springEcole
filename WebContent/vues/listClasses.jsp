@@ -34,8 +34,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<form action="editClasse" method="post">
-		<button type="submit">New</button>
-	</form>
+	<a href="./editClasse">Nouvelle</a>
 </body>
 </html>

@@ -3,11 +3,13 @@ package springEcole.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import springEcole.bean.Prof;
 import springEcole.dao.IProfDAO;
 
+@Service
 public class ProfService implements IProfService {
 
 	@Autowired
@@ -39,6 +41,11 @@ public class ProfService implements IProfService {
 		final Prof prof = new Prof();
 		prof.setId(id);
 		dao.remove( prof );
+	}
+
+	@Override
+	public Prof get(Integer id) {
+		return dao.get( id );
 	}
 
 }

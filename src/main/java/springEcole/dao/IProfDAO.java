@@ -10,5 +10,6 @@ public interface IProfDAO {
 	void create( final Prof p );
 	void update( final Prof p );
 	void remove( final Prof p );
+	Prof get(Integer id);
 
 }

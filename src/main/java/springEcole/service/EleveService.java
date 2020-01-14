@@ -3,11 +3,13 @@ package springEcole.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import springEcole.bean.Eleve;
 import springEcole.dao.IEleveDAO;
 
+@Service
 public class EleveService implements IEleveService {
 
 	@Autowired
