@@ -6,27 +6,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edition - Classe</title>
+<title>Edition - Prof</title>
 </head>
 <body>
 	<h2>Gestion de classes</h2>
 	
-	<form action="${ fill_id==-1 ? 'commitClasseEdit' : '../commitClasseEdit' }" method="post">
+	<form action="${ fill_id==-1 ? 'commitProfEdit' : '../commitProfEdit' }" method="post">
 	<input type="text" name="id" value="${fill_id}" hidden="true" readonly>
 	<input type="text" name="nom" value="${fill_nom}" placeholder="Nom">
-	<select name="prof">
-		<c:forEach items="${ profs }" var="p">
+	<input type="text" name="prenom" value="${fill_prenom}" placeholder="Prenom">
+	<input type="date" name="birth" value="${fill_birth}" placeholder="Date de naissance">
+	<input type="text" name="adresse" value="${fill_adresse}" placeholder="Adresse">
+	<select name="sexe">
+		<c:forEach items="${ sexes }" var="s">
 		
 			<c:choose>
-			    <c:when test="${p.nom == fill_prof}">
-					<option value="${p.id}" selected>
+			    <c:when test="${s == fill_sexe}">
+					<option value="${s}" selected>
 			    </c:when>    
 			    <c:otherwise>
-					<option value="${p.id}">
+					<option value="${s}">
 			    </c:otherwise>
 			</c:choose>
 			<%-- <option ...> print par le choose --%>
-				<c:out value="${p.nom}"/>
+				<c:out value="${s}"/>
 			</option>
 		</c:forEach>
 	</select>

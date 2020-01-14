@@ -29,7 +29,7 @@ public class ProfDAO extends Dao<Prof> implements IProfDAO {
 		lCriteriaUpdate.where( lCriteriaBuilder.equal(lPath, p.getId()) );
 		lCriteriaUpdate.set( "nom", p.getNom() );
 		lCriteriaUpdate.set( "prenom", p.getPrenom() );
-		lCriteriaUpdate.set( "date_naissance", p.getDateNaissance() );
+		lCriteriaUpdate.set( "dateNaissance", p.getDateNaissance() );
 		lCriteriaUpdate.set( "adresse", p.getAdresse() );
 		lCriteriaUpdate.set( "sexe", p.getSexe() );
 		
