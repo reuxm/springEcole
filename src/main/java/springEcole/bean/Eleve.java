@@ -21,7 +21,6 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table( name="t_eleve" )
-
 public class Eleve {
 	
 	@Id
@@ -35,13 +34,13 @@ public class Eleve {
 	@Column(name="prenom", nullable=true, length=100)
 	private String prenom;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column( name="date_naissance;" )
-	private Date dateNaissance;
-	
 	@ManyToOne
 	@JoinColumn( name="classe", nullable=false )
 	private Classe classe;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column( name="date_naissance" )
+	private Date dateNaissance;
 	
 	@Column(name="adresse", nullable=true, length=250)
 	private String adresse;
@@ -106,6 +105,12 @@ public class Eleve {
 
 	public void setSexe(Sexe sexe) {
 		this.sexe = sexe;
+	}
+
+	@Override
+	public String toString() {
+		return "Eleve [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", classe=" + classe + ", dateNaissance="
+				+ dateNaissance + ", adresse=" + adresse + ", sexe=" + sexe + ", notes=" + notes + "]";
 	}
 	
 	public List<Note> getNotes() {

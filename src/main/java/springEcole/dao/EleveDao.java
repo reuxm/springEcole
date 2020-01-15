@@ -30,7 +30,7 @@ public class EleveDao extends Dao<Eleve> implements IEleveDAO {
 		lCriteriaUpdate.set( "nom", e.getNom() );
 		lCriteriaUpdate.set( "prenom", e.getPrenom() );
 		lCriteriaUpdate.set( "classe", e.getClasse() );
-		lCriteriaUpdate.set( "date_naissance", e.getDateNaissance() );
+		lCriteriaUpdate.set( "dateNaissance", e.getDateNaissance() );
 		lCriteriaUpdate.set( "adresse", e.getAdresse() );
 		lCriteriaUpdate.set( "sexe", e.getSexe() );
 		

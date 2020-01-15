@@ -22,7 +22,7 @@ public class ProfService implements IProfService {
 	}
 
 	@Override
-	@Transactional(readOnly=true)
+	@Transactional
 	public void create(Prof p) {
 		dao.create( p );
 	}

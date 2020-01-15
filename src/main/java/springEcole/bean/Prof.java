@@ -112,12 +112,5 @@ public class Prof {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
-/*
-	@Override
-	public String toString() {
-		return "Prof [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + dateNaissance
-				+ ", adresse=" + adresse + ", sexe=" + sexe + ", classes=" + classes + ", notes=" + notes + "]";
-	}
-	*/
 	
 }

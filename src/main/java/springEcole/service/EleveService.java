@@ -43,4 +43,9 @@ public class EleveService implements IEleveService {
 		dao.remove( eleve );
 	}
 
+	@Override
+	public Eleve get(Integer id) {
+		return dao.get( id );
+	}
+
 }

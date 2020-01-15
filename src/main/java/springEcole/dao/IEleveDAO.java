@@ -10,5 +10,6 @@ public interface IEleveDAO {
 	void create( final Eleve e );
 	void update( final Eleve e );
 	void remove( final Eleve e );
+	Eleve get( final Integer id);
 	
 }

@@ -79,7 +79,6 @@ public class ProfController {
 		prof.setAdresse( adresse );
 		prof.setSexe( sexe );
 		if( id == -1 ) { //creation
-			//System.out.println(prof);
 			service.create( prof );
 		}
 		else { //update

@@ -25,6 +25,7 @@ public class Matiere {
 	@Column(name="nom", nullable=true, length=250)
 	private String nom;
 	
+	
 	@OneToMany(mappedBy="matiere", fetch=FetchType.LAZY)
 	private List<Note> notes = new ArrayList<Note>();
 
@@ -51,6 +52,5 @@ public class Matiere {
 	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
-
 	
 }
